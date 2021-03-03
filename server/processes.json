@@ -1,0 +1,16 @@
+{
+  "apps": [
+      {
+          "name": "api",
+          "script": "app.js",
+          "merge_logs": true,
+          "max_restarts": 20,
+          "max_memory_restart": "200M",
+          "env": {
+              "PORT": 4000,
+              "NODE_ENV": "development",
+              "SECRET_KEY": "KOMPAS_BACKEND"
+          }
+      }
+  ]
+}

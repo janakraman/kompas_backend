@@ -1,6 +1,5 @@
 const jwt = require("jsonwebtoken");
-// const { SECRET_KEY } = process.env;
-const SECRET_KEY = "KOMPAS_BACKEND";
+const { SECRET_KEY } = process.env;
 
 function createToken(payload) {
   return jwt.sign(payload, SECRET_KEY);
