@@ -9,7 +9,7 @@ export function dateFormatLong(dateString = "01/01/2001") {
     timeZone: 'Asia/Jakarta',
     timeZoneName: "short",
   };
-  return (new Intl.DateTimeFormat("en-ID", options).format(new Date(dateString))).toString();
+  return (new Intl.DateTimeFormat("id-ID", options).format(new Date(dateString))).toString();
 }
 
 // console.log(dateFormat("2021-02-22T14:00:53.288Z").toString());

@@ -17,7 +17,7 @@ const fakeAuth = {
       });
       if (response) {
         fakeAuth.isAuthenticated = true;
-        localStorage.access_token = response.data.access_token;
+        localStorage.access_token = response.data;
         cb();
       }
     } catch (error) {
@@ -69,26 +69,6 @@ function useProvideAuth() {
     signin,
     signout,
   };
-}
-
-export function AuthButton() {
-  let history = useHistory();
-  let auth = useAuth();
-
-  return auth.user ? (
-    <p>
-      Welcome!{" "}
-      <button
-        onClick={() => {
-          auth.signout(() => history.push("/"));
-        }}
-      >
-        Sign out
-      </button>
-    </p>
-  ) : (
-    <p>You are not logged in.</p>
-  );
 }
 
 // A wrapper for <Route> that redirects to the login

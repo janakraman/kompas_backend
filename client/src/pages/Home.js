@@ -1,14 +1,16 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import Posts from "../components/Posts";
 
 export default function Home() {
-  const dispatch = useDispatch;
-  const state = useSelector((state) => state);
-
-  
   return (
     <div className="container">
-      <div>Ini Home</div>
+      <div className="d-flex justify-content-between align-items-center border-bottom mt-5">
+        <h1>News</h1>
+        <Link to="/create" type="button" className="btn btn-primary">
+          Add News
+        </Link>
+      </div>
+      <Posts />
     </div>
   );
 }
